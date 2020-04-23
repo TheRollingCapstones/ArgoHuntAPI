@@ -4,9 +4,9 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 //Connect to DB
-mongoose.connect(process.env.DB_CONNECT_STRING, {useNewUrlParser: true}, 
-    ()=> console.log("Connect to DB!")
-);
+// mongoose.connect(process.env.DB_CONNECT_STRING, {useNewUrlParser: true}, 
+//     ()=> console.log("Connect to DB!")
+// );
 
 let dbURI = process.env.DB_CONNECT_STRING;
 
@@ -52,4 +52,4 @@ process.on('SIGTERM', () => {
 });
 
 // Require the specific schemas
-require('.user.js');
+require('./user.js');
