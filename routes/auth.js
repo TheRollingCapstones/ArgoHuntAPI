@@ -21,7 +21,7 @@ router.post("/register", async(req, res)=>{
         birthDate: req.body.birthDate
     });
     try{
-        const savedUser = await user.save();
+        const savedUser = await newUser.save();
         res.send(savedUser);
     }catch(err){
         res.status(400).send(err);
@@ -48,7 +48,7 @@ router.post("/login", async(req, res)=>{
     const token = jwt.sign({_id: user.id}, process.env.TOKEN_SECRET);
     res.header("auth-token", token).send(token);
 
-    res.send("Logged in!");
+    //res.send("Logged in!");
 });
 
 module.exports = router;
