@@ -10,29 +10,29 @@ require('./models/db');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser())
-app.use('/api/v1/users', users);
+app.use(cookieParser());
+
 
 
 /*************** Routes *******************/
 
-app.use('/api/user', authRoute);
+app.use('/api/users', users);
+app.use('/api/auth', authRoute);
 
 
 /*************** Error Handlers *******************/
 
 // 404 catch-all handler (middleware)
 app.use(function(req, res, next){
-	res.status(404);
-	res.render('404');
+	res.status(404).send();
 });
 
 // 500 error handler (middleware)
 app.use(function(err, req, res, next){
 	console.error(err.stack);
-	res.status(500);
-	res.json('500');
+	res.json({"Error":{"status":500, "error":err}});
 });
+console.log("We starting up")
 const port = process.env.PORT || 3000;
 app.set('port', port);
 
