@@ -32,6 +32,7 @@ app.use(function(err, req, res, next){
 	console.error(err.stack);
 	res.json({"Error":{"status":500, "error":err}});
 });
+console.log("We starting up")
 const port = process.env.PORT || 3000;
 app.set('port', port);
 
