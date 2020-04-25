@@ -11,7 +11,6 @@ Details:
 
   +-- A. Argohunt Manuals
 
-    | +-- 1. Argohunt User Manual document
     | +-- 2. Argohunt Intallation Manual document
 
 
