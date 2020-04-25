@@ -27,4 +27,5 @@ Details:
     | +-- 2. ArgoHunt - https://github.com/TheRollingCapstones/ArgoHunt
     
   +-- B. Scripts
+  
     | +-- 1. .env backend environment variable
